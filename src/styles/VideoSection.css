@@ -1,0 +1,16 @@
+.video-section {
+    padding:2rem;
+  }
+  
+  .video-placeholder {
+    background: #e74c3c;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    border-radius: 12px;
+    margin: 0 auto;
+    max-width: 1000px;
+  }
+  

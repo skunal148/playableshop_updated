@@ -1,0 +1,25 @@
+.how-it-works {
+    padding: 4rem;
+  }
+
+  .how-it-works h2{
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    text-shadow: 10px 10px 5px #000;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    width: 120px;
+    height: 120px;
+    background: #FFF;
+    border-radius: 10px;
+  }
+  

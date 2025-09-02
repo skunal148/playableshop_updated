@@ -1,0 +1,74 @@
+.work {
+  padding: 2rem;
+  color: #fff;
+  text-align: center;
+  position: relative; /* enable overlay positioning */
+}
+
+/* Bottom-origin overlay gradient shown in front of the grid */
+.work::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 400px; /* adjust to taste */
+  background: linear-gradient(to top, #e74c3c 0%, rgba(231, 76, 60, 0) 70%);
+  pointer-events: none;
+  z-index: 1; /* sits above the grid, below text */
+}
+
+.work h2 {
+  font-size: 4rem;
+  position: relative;
+  z-index: 2; /* above overlay */
+  text-shadow: 10px 10px 5px #000;
+}
+.work p {
+  position: relative;
+  z-index: 2; /* above overlay */
+}
+
+/* 3x3 grid */
+.work-grid {
+  position: relative;
+  z-index: 0; /* below overlay */
+  display: grid;
+  grid-template-columns: repeat(3, 180px); /* narrower width */
+  grid-template-rows: repeat(2, 260px);
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 5rem; /* buffer for staggered cards moved up by 60px */
+  margin-bottom: 2rem;
+}
+
+.work-card {
+  background: #FFF;
+  border-radius: 10px;
+  width: 100%;   /* fills grid cell width */
+  height: 100%;  /* fills grid cell height */
+}
+
+/* Stagger effect for middle column */
+.work-card:nth-child(2),
+.work-card:nth-child(5),
+.work-card:nth-child(8) {
+  transform: translateY(-60px);
+}
+
+.see-more {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  color: #fff;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2; /* above overlay */
+}
+
+.see-more:hover {
+  background: #fff;
+  color: #000;
+}
+    
