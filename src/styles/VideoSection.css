@@ -3,14 +3,14 @@
   }
   
   .video {
-    height: 800px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     border-radius: 12px;
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 1400px;
   }
   
   .video video {

@@ -10,16 +10,51 @@
   }
   
   .steps {
+    position: relative;
     display: flex;
     justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 2rem;
+    flex-wrap: nowrap; /* keep on one line */
+    margin-top: 2rem;
+    overflow-x: auto; /* allow scroll on small screens */
   }
+  /* removed connector line */
   
   .step {
-    width: 120px;
-    height: 120px;
+    position: relative;
+    width: 280px;
+    min-height: 280px;
     background: #FFF;
-    border-radius: 10px;
+    color: #1e1e1e;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem 1.5rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    z-index: 1; /* above connector line */
   }
-  
+
+  .step-icon {
+    color: #e74c3c;
+    font-size: 1.1rem;
+    margin-top: 0.25rem;
+  }
+
+  .step h3 {
+    margin: 0.75rem 0 0.5rem;
+    font-size: 1.25rem;
+  }
+
+  .step p {
+    margin: 0;
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.98rem;
+  }
+
+  @media (max-width: 1200px) {
+    .step { width: 320px; }
+  }
+  @media (max-width: 900px) {
+    .steps::before { display: none; }
+    .step { width: 100%; }
+  }
