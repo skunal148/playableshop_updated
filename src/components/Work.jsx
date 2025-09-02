@@ -5,12 +5,14 @@ export default function Work() {
       <section className="work" id="work">
         <h2>OUR WORK</h2>
         <p style={{textAlign: 'center'}}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Ads you don’t just watch — you play.
         </p>
         <p style={{textAlign: 'center'}}>
-        Vestibulum venenatis volutpat arcu, et auctor massa eleifend at. Aliquam in dui nisl.
+        Turn boring promotions into fun, interactive experiences.
         </p>
         <div className="work-grid">
+          <div className="work-card"></div>
+          <div className="work-card"></div>
           <div className="work-card"></div>
           <div className="work-card"></div>
           <div className="work-card"></div>
@@ -24,4 +26,3 @@ export default function Work() {
       </section>
     );
   }
-  

@@ -25,18 +25,20 @@
   text-shadow: 10px 10px 5px #000;
 }
 .work p {
+  font-size: 1.2rem;
+  font-style: italic;
   position: relative;
   z-index: 2; /* above overlay */
 }
 
-/* 3x3 grid */
+/* 5x2 grid */
 .work-grid {
   position: relative;
   z-index: 0; /* below overlay */
   display: grid;
-  grid-template-columns: repeat(3, 180px); /* narrower width */
-  grid-template-rows: repeat(2, 260px);
-  gap: 0.5rem;
+  grid-template-columns: repeat(5, 180px); /* 5 columns, same card width */
+  grid-template-rows: repeat(2, 260px);    /* 2 rows, same card height */
+  gap: 1rem;
   justify-content: center;
   margin-top: 5rem; /* buffer for staggered cards moved up by 60px */
   margin-bottom: 2rem;
@@ -47,14 +49,35 @@
   border-radius: 10px;
   width: 100%;   /* fills grid cell width */
   height: 100%;  /* fills grid cell height */
+  transition: transform 0.3s ease-in-out; /* animate all transform changes */
 }
 
-/* Stagger effect for middle column */
-.work-card:nth-child(2),
+.work-card:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+/* Stagger effect for the middle column in a 5-column grid: items 3 and 8 */
+.work-card:nth-child(3),
+.work-card:nth-child(8),
+.work-card:nth-child(1),
+.work-card:nth-child(6),
 .work-card:nth-child(5),
-.work-card:nth-child(8) {
+.work-card:nth-child(10) {
   transform: translateY(-60px);
 }
+
+/* Ensure staggered cards also scale on hover by combining transforms */
+.work-card:nth-child(3):hover,
+.work-card:nth-child(8):hover,
+.work-card:nth-child(1):hover,
+.work-card:nth-child(6):hover,
+.work-card:nth-child(5):hover,
+.work-card:nth-child(10):hover {
+  transform: translateY(-60px) scale(1.05);
+}
+
+
 
 .see-more {
   background: transparent;
@@ -71,4 +94,6 @@
   background: #fff;
   color: #000;
 }
+
+
     

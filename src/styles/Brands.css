@@ -10,16 +10,20 @@
 
 .brands-grid {
     padding: 2rem;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-auto-flow: column;           /* fill by columns */
+    grid-template-rows: repeat(2, auto); /* exactly two rows */
+    grid-auto-columns: minmax(140px, auto);
+    gap: 1.25rem 2rem;                /* row gap, column gap */
+    align-items: center;
+    justify-items: center;
+    overflow-x: auto;                 /* scroll horizontally if needed */
+    scrollbar-width: thin;
 }
 
 .brands img{
     height: 100px;
     width: auto;
-    padding: 0.5rem;
 }
 
 .brands img:hover{

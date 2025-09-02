@@ -16,6 +16,8 @@
     text-shadow: 10px 10px 5px #000;
   }
   .products p{
+    font-size: 1.2rem;
+    font-style: italic;
     text-align: center;
     
   }
@@ -24,12 +26,23 @@
     height: 180px;
     background: #FFF;
     border-radius: 10px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+    display: flex;                 /* stack title on top, button at bottom */
+    flex-direction: column;        
+    justify-content: space-between;/* push title to top, button to bottom */
+    align-items: flex-end;         /* align cross-axis to the right */
     padding: 1rem;
   }
   
   .product-card button {
-    margin: 0;
+    margin: 0;                    /* sits at bottom-right by parent alignment */
+    align-self: flex-end;         /* ensure button is bottom-right */
+  }
+
+  .product-card h3{
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    color: #000000;
+    display: block;                /* normal block heading */
+    text-align: left;             
+    align-self: flex-start;       /* ensure title is top-left */
   }

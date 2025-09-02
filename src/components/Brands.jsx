@@ -20,6 +20,7 @@ export default function Brands() {
           <img src="./brands/upily.png" alt="Brand 13" />  
           <img src="./brands/HeyCash.png" alt="Brand 14" />  
           <img src="./brands/JunkyardTycoon.png" alt="Brand 15" />  
+          <img src="./brands/Ice.png" alt="Brand 16" />  
         </div>
       </section>
     );
