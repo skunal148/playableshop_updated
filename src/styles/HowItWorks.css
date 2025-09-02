@@ -17,20 +17,30 @@
     gap: 2rem;
     flex-wrap: nowrap; /* keep on one line */
     margin-top: 2rem;
-    overflow-x: auto; /* allow scroll on small screens */
+    overflow: visible; /* allow hover scale to render without scrollbars */
   }
   /* removed connector line */
   
   .step {
     position: relative;
-    width: 280px;
-    min-height: 280px;
+    width: 240px;      /* reduced to avoid hover overflow */
+    min-height: 240px; /* reduced to avoid hover overflow */
     background: #FFF;
     color: #1e1e1e;
     border-radius: 16px;
+    overflow: hidden;  /* clip hover scale within rounded corners */
     padding: 1.25rem 1.5rem 1.5rem;
     box-shadow: 0 10px 25px rgba(0,0,0,0.25);
     z-index: 1; /* above connector line */
+    transition: transform 0.3s ease-in-out; /* smooth hover like other cards */
+  }
+
+  /* Only apply hover scaling on devices that support hover (prevents scrollbars) */
+  @media (hover: hover) and (pointer: fine) {
+    .step:hover {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
   }
 
   .step-icon {
@@ -52,9 +62,10 @@
   }
 
   @media (max-width: 1200px) {
-    .step { width: 320px; }
+    .step { width: 260px; } /* keep slightly larger but still reduced */
   }
   @media (max-width: 900px) {
     .steps::before { display: none; }
+    .steps { overflow-x: auto; } /* re-enable horizontal scroll on small screens */
     .step { width: 100%; }
   }
