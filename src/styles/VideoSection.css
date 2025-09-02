@@ -20,3 +20,14 @@
     border-radius: 12px;
     display: block;
   }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .video-section { padding: 1rem; }
+    .video {
+      height: 40vh;          /* relative to viewport */
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .video video { border-radius: 10px; }
+  }

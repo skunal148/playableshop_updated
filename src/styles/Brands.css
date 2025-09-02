@@ -11,14 +11,10 @@
 .brands-grid {
     padding: 2rem;
     display: grid;
-    grid-auto-flow: column;           /* fill by columns */
-    grid-template-rows: repeat(2, auto); /* exactly two rows */
-    grid-auto-columns: minmax(140px, auto);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 1.25rem 2rem;                /* row gap, column gap */
     align-items: center;
     justify-items: center;
-    overflow-x: auto;                 /* scroll horizontally if needed */
-    scrollbar-width: thin;
 }
 
 .brands img{
@@ -29,4 +25,23 @@
 .brands img:hover{
     transform: scale(1.1);  
     transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .brands { padding: 1rem; }
+  .brands h2 { font-size: 2.25rem; text-shadow: 6px 6px 3px #000; }
+  .brands-grid {
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 0.75rem 1rem;
+  }
+  .brands img { height: 60px; }
+}
+
+/* Tablet responsiveness */
+@media (max-width: 1024px) {
+  .brands-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
 }

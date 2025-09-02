@@ -96,4 +96,60 @@
 }
 
 
-    
+  /* Tablet responsiveness: avoid overflow between 769px and 1024px */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(2, 1fr);  /* let height flow */
+      height:440px;
+      margin-bottom: 0;
+      
+    }
+    .work-card:nth-child(3),
+  .work-card:nth-child(8),
+  .work-card:nth-child(1),
+  .work-card:nth-child(6),
+  .work-card:nth-child(5),
+  .work-card:nth-child(10) {
+    transform: none;
+  }
+
+  /* Also disable hover scaling on tablets */
+  .work-card:hover {
+    transform: none !important;
+  }
+
+    .work::after{
+      height: 200px;
+    }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .work-card:hover{
+      transform: none !important;
+    }
+    .work { padding: 1rem; }
+    .work h2 { font-size: 2.25rem; text-shadow: 6px 6px 3px #000; }
+    .work p { font-size: 1rem; }
+    .work::after { background: linear-gradient(to top, #e74c3c 0%, rgba(231, 76, 60, 0) 70%); z-index: 1;} /* avoid overlay covering grid on small screens */
+    .work-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+    .work-card { min-height: 160px; }
+    /* Show fewer cards on mobile for clarity */
+    .work-card:nth-child(n+7) { display: none; }
+    /* Remove stagger effect on mobile to avoid layout jumps */
+    .work-card:nth-child(3),
+    .work-card:nth-child(8),
+    .work-card:nth-child(1),
+    .work-card:nth-child(6),
+    .work-card:nth-child(5),
+    .work-card:nth-child(10) {
+      transform: none;
+    }
+  }

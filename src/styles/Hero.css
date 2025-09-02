@@ -1,6 +1,7 @@
 .hero {
     padding: 0 2rem 2rem;
     text-align: center;
+    position: relative; /* create stacking context */
   }
   
   .hero h1 {
@@ -9,18 +10,30 @@
     font-weight: 900;
     margin-bottom: 1rem;
     text-shadow: 10px 10px 5px #000;
+    position: relative;
+    z-index: 1; /* keep below CardStack (which has z-index:10) */
   }
 
   .hero h3{
     padding-top:5rem;
     font-size: 2rem;
     margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
   }
   
   .hero p {
     font-size: 1.5rem;
     color: #aaa;
+    position: relative;
+    z-index: 1;
 
   }
   
- 
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .hero { padding: 0 1rem 1.5rem; }
+    .hero h1 { font-size: 2.75rem; padding: 1rem 0; }
+    .hero h3 { font-size: 1.25rem; padding-top: 1rem; }
+    .hero p  { font-size: 1rem; }
+  }

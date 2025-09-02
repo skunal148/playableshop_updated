@@ -3,8 +3,13 @@
     justify-content: center;
     margin-top: -80px;   /* pull cards closer to Hero */
     position: relative;
-    z-index: 2;
+    z-index: 10; /* ensure above h1/p */
+    max-width: 100%;
+    overflow: visible; /* allow tilt to show above/below without clipping */
+    scrollbar-width: none; /* Firefox */
   }
+  /* WebKit-based browsers */
+  .card-stack::-webkit-scrollbar { display: none; }
   
   .card {
     width: 200px;
@@ -37,3 +42,30 @@
     margin-left: -20px;
   }
   
+  /* Tablet responsiveness */
+  @media (max-width: 1024px) {
+    .card-stack { margin-top: -40px; }
+    .card { width: 160px; height: 320px; }
+    .card-left { transform: rotate(-10deg) translateY(40px) translateX(-10px); }
+    .card-right { transform: rotate(10deg) translateX(10px); }
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .card-stack {
+      margin-top: -40px;             /* more overlap with title */
+      gap: 0.75rem;
+      padding: 0 16px;               /* room for rotated corners */
+      margin-bottom: 1rem;           /* extra breathing room below */
+    }
+    .card { width: 140px; height: 300px; }
+    /* Reintroduce a subtle tilt on mobile without causing overflow */
+    .card-left {
+      transform: rotate(-8deg) translateY(20px) translateX(-4px);
+      margin-right: 0;
+    }
+    .card-right {
+      transform: rotate(8deg) translateX(4px);
+      margin-left: 0;
+    }
+  }
