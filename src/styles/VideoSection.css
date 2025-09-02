@@ -2,15 +2,21 @@
     padding:2rem;
   }
   
-  .video-placeholder {
-    background: #e74c3c;
-    height: 350px;
+  .video {
+    height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
     border-radius: 12px;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1200px;
   }
   
+  .video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+  }
